@@ -8,7 +8,8 @@ namespace AbySalto.Junior.Infrastructure.Database
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options) { }
 
-
+        public DbSet<AbySalto.Junior.Models.Order> Orders { get; set; }
+        public DbSet<AbySalto.Junior.Models.OrderItem> OrderItems { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
