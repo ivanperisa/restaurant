@@ -23,6 +23,8 @@ namespace AbySalto.Junior
             builder.Services.AddDbContext<IApplicationDbContext, ApplicationDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+            builder.Services.AddScoped<AbySalto.Junior.Services.OrderService>();
+
             var app = builder.Build();
 
             if (app.Environment.IsDevelopment())
